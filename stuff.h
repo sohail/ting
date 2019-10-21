@@ -1,6 +1,6 @@
 //
 //stuff.h
-//Written by, sohail.github.io
+//Written by, Sohail Qayum Malik
 //
 
 #include <stdio.h>

@@ -1,6 +1,6 @@
 //
 //local_connect.h
-//Written by, sohail.github.io
+//Written by, Sohail Qayum Malik
 //
 
 namespace local_connect{

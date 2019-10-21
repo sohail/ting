@@ -1,6 +1,6 @@
 //
 //parse_args.h
-//Written by, sohail.github.io
+//Written by, Sohail Qayum Malik
 //
 
 namespace parse{

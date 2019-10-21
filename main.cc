@@ -1,6 +1,6 @@
 //
 //main.cc
-//Written by, sohail.github.io
+//Written by, Sohail Qayum Malik
 //
 
 #include "stuff.h"
