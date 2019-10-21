@@ -34,7 +34,7 @@ This is my implementation of them. Written purely to study the the protocol head
 
 Example session...
 ------------------
-
+````
 funtoo ting # ./ting src 192.168.1.110 dst 198.54.114.214 ttl 1
 Reply....
 Source=192.168.1.1 TTL=64
@@ -78,5 +78,5 @@ funtoo ting # ./ting src 192.168.1.110 dst 198.54.114.214
 Reply....
 Source=198.54.114.214 TTL=46
 ICMP-type="Echo reply"
-
+````
 
