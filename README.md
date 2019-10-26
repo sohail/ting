@@ -8,7 +8,7 @@ Little _tarceroute_ and _ping_ like thing, that is why it is a "**ting**"
 **ting**(it pings, traces route and finds path-MTU). 
 ====================================================
 You know what ping does, and what is a traceroute. 
-This is my implementation of them. Written purely to study the the protocol headers of IP/ICMP and raw-sockets. I call it, the ting, the name ting makes sense to me as this program pings and traces route. ting is written in C++ish. ting can also be used to find the path-MTU(like I've never told you that before) 
+This is my implementation of them. Written purely to study the the protocol headers of IP/ICMP and raw-sockets. I call it, the ting, the name ting makes sense to me as this program pings and traces route. ting is written in C++ish. ting can also be used to find the path-MTU(like I've never told you that before). I wrote this tool while reading chapter on ICMP protocol from book [TCP/IP Illustrated First Edition by, ](https://en.wikipedia.org/wiki/TCP/IP_Illustrated)[W. Richard Stevens](https://en.wikipedia.org/wiki/W._Richard_Stevens).
 
 ---------------------------------------------
 | ting, command line options and arguments. |
