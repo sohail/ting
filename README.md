@@ -2,7 +2,7 @@ ting
 ====
 Little _tarceroute_ and _ping_ like thing, that is why it is a "**ting**"
 
---Last updated :- 5th, January 2018
+--Last updated :- 3rd, June 2023
 -----------------------------------
 
 **ting**(it pings, traces route and finds path-MTU). 
@@ -32,7 +32,7 @@ This is my implementation of them. Written purely to study the the protocol head
       the size of the outgoing datagram is the combined size of the IP and ICMP headers. 
 
 
-Example session...
+A session with ting...
 ------------------
 ````
 funtoo ting # ./ting src 192.168.1.110 dst 198.54.114.214 ttl 1
@@ -79,4 +79,30 @@ Reply....
 Source=198.54.114.214 TTL=46
 ICMP-type="Echo reply"
 ````
+### History of our session with ting
+In this session with the program "ting," the objective was to trace the route from the source IP address (192.168.1.110) to the destination IP address (198.54.114.214) using different TTL (Time-to-Live) values. The TTL value represents the maximum number of hops (routers) a packet can traverse before being discarded.
+
+### What happened in each step of our previous session:
+
+- With TTL set to 1, the packet reached the first hop (192.168.1.1) before the TTL expired. The router at this hop sent an ICMP (Internet Control Message Protocol) message with the type "TTL time expired" and code "TTL become 0 during transit" back to the source.
+
+- With TTL set to 2, the packet reached another hop (1.1.1.1) before the TTL expired. Again, an ICMP message was received indicating TTL expiration.
+
+- With TTL set to 3, the packet reached the third hop (192.168.149.1) before TTL expiration, and an ICMP message was received.
+
+- No reply was received when TTL was set to 4, indicating that the TTL value was not sufficient to reach the destination.
+
+- The same situation occurred with TTL set to 5, and no reply was received.
+
+- With TTL set to 6, the packet reached a different hop (42.201.255.41) before TTL expiration. An ICMP message was received indicating TTL expiration.
+
+- Increasing the TTL to 17, the packet reached a further hop (129.250.4.107) before TTL expiration, and an ICMP message was received.
+
+- Increasing the TTL to 20, the packet reached another hop (199.193.7.158) before TTL expiration, and an ICMP message was received.
+
+- Setting the TTL to 21, the packet finally reached the destination (198.54.114.214), and an ICMP "Echo reply" message was received. This indicates that the destination responded to the packet.
+
+### Summary
+In this session, ting was able to trace the route by progressively increasing the TTL value. The TTL field in the IP header was used to control the maximum number of hops the packet could traverse. Each router decremented the TTL value by one when forwarding the packet. When the TTL reached 0, the router discarded the packet and sent an ICMP message back to the source. By incrementally increasing the TTL, ting was able to discover the sequence of hops between the source and destination and determine the route.
+
 
